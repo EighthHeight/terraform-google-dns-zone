@@ -23,7 +23,7 @@ variable "zone_name" {
 }
 
 locals {
-  zone_name = var.zone_name == null ? replace(var.zone_domain_name, ".", "-") : var.zone_name
+  zone_name = var.zone_name == null ? "zone-${replace(var.zone_domain_name, ".", "-")}" : var.zone_name
 }
 
 variable "zone_description" {
