@@ -11,7 +11,7 @@ variable "gcp_project_id" {
 # DNS Managed Zone
 ##########
 
-variable "zone_dns_name" {
+variable "zone_domain_name" {
   type        = string
   description = "(Required) The DNS name of this managed zone, for instance 'example.com'"
 }
@@ -23,7 +23,7 @@ variable "zone_name" {
 }
 
 locals {
-  zone_name = var.zone_name == null ? replace(var.zone_dns_name, ".", "-") : var.zone_name
+  zone_name = var.zone_name == null ? replace(var.zone_domain_name, ".", "-") : var.zone_name
 }
 
 variable "zone_description" {
@@ -33,7 +33,7 @@ variable "zone_description" {
 }
 
 locals {
-  zone_description = var.zone_description == null ? "Managed Zone for ${var.zone_dns_name}" : var.zone_description
+  zone_description = var.zone_description == null ? "Managed Zone for ${var.zone_domain_name}" : var.zone_description
 }
 
 variable "zone_labels" {

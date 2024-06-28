@@ -5,7 +5,7 @@
 resource "google_dns_managed_zone" "dns_zone" {
   project     = var.gcp_project_id
   name        = local.zone_name
-  dns_name    = "${var.zone_dns_name}."
+  dns_name    = "${var.zone_domain_name}."
   description = local.zone_description
   labels      = var.zone_labels
   dnssec_config {
