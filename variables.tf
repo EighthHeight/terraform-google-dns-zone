@@ -73,6 +73,7 @@ variable "domain_records" {
     ttl  = number
   }))
   default = []
+  nullable = false
 }
 
 variable "subdomain_records" {
@@ -83,4 +84,5 @@ variable "subdomain_records" {
     ttl  = number
   }))
   default = []
+  nullable = false
 }
